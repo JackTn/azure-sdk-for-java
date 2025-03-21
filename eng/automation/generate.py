@@ -111,6 +111,7 @@ def sdk_automation(input_file: str, output_file: str):
     with open(input_file, "r") as fin:
         config = json.load(fin)
 
+    logging.error("[TEST] Java generate sdk_automation")
     packages = []
     try:
         # typespec
@@ -227,7 +228,7 @@ def sdk_automation_autorest(config: dict) -> List[dict]:
 
 
 def sdk_automation_typespec(config: dict) -> List[dict]:
-
+    logging.error(f"[TEST] java generate sdk_automation_typespec_project")
     packages = []
     if "relatedTypeSpecProjectFolder" not in config:
         return packages
@@ -247,7 +248,6 @@ def sdk_automation_typespec(config: dict) -> List[dict]:
 
 
 def sdk_automation_typespec_project(tsp_project: str, config: dict) -> dict:
-
     base_dir = os.path.abspath(os.path.dirname(sys.argv[0]))
     sdk_root = os.path.abspath(os.path.join(base_dir, SDK_ROOT))
     spec_root = os.path.abspath(config["specFolder"])
