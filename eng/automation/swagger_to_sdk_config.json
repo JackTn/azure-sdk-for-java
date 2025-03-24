@@ -5,7 +5,11 @@
       "path": "./eng/automation/init.sh",
       "envs": [
         "JAVA_HOME_11_X64"
-      ]
+      ],
+      "stderr": {
+        "showInComment": ".*ERROR.*",
+        "scriptError": "\\[ERROR\\]"
+      }
     }
   },
   "generateOptions": {
@@ -13,7 +17,12 @@
       "path": "./eng/automation/generate.py",
       "logPrefix": "Java-Sdk-Automation",
       "stdout": {
-        "showInComment": "(.*\\[ERROR\\]\\s*).*"
+        "showInComment": "(.*\\[ERROR\\]\\s*).*",
+        "scriptError": "\\[ERROR\\]"
+      },
+      "stderr": {
+        "showInComment": ".*ERROR.*",
+        "scriptError": "\\[ERROR\\]"
       }
     }
   },
